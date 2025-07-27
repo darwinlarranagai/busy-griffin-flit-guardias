@@ -29,11 +29,12 @@ const InternationalPresence = () => {
             <p className="text-muted-foreground">Operaciones regionales</p>
           </div>
         </div>
-        {/* Placeholder for a more complex interactive map if needed later */}
-        <div className="mt-12 p-8 bg-gray-100 rounded-lg text-gray-600">
-          <p className="text-lg font-medium">
-            (Aquí se podría integrar un mapa interactivo de Latinoamérica mostrando la presencia de Total Security)
-          </p>
+        <div className="mt-12">
+          <img 
+            src="/images/international/mapa-latam.png" 
+            alt="Mapa de presencia internacional de Total Security en Latinoamérica" 
+            className="w-full max-w-4xl mx-auto object-contain rounded-lg shadow-md"
+          />
         </div>
       </div>
     </section>

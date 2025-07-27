@@ -1,19 +1,18 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShieldCheck, Camera, Car } from "lucide-react";
 
 const services = [
   {
-    icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/services/agentes.jpg",
     title: "Agentes de Seguridad Especializados",
     description: "Personal altamente capacitado con diferentes niveles de especialización según normativa chilena. Desde guardias convencionales hasta agentes tácticos mejorados.",
   },
   {
-    icon: <Camera className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/services/vigilancia.jpg",
     title: "Sistemas de Vigilancia Inteligente",
     description: "Tecnología de vanguardia con IA, monitoreo 24/7 y análisis predictivo. Desde CCTV tradicional hasta drones y software integral de gestión.",
   },
   {
-    icon: <Car className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/services/flota.jpg",
     title: "Flota de Seguridad Especializada",
     description: "Vehículos especialmente adaptados para vigilancia, patrullaje urbano y servicios de escolta, equipados con la última tecnología.",
   },
@@ -33,14 +32,16 @@ const Services = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col items-center text-center p-6">
-              <CardHeader>
-                {service.icon}
-                <CardTitle className="mt-4">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{service.description}</CardDescription>
-              </CardContent>
+            <Card key={service.title} className="flex flex-col">
+              <img src={service.imageUrl} alt={service.title} className="w-full h-48 object-cover rounded-t-lg" />
+              <div className="p-6 flex flex-col flex-grow">
+                <CardHeader className="p-0">
+                  <CardTitle>{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 mt-4 flex-grow">
+                  <CardDescription>{service.description}</CardDescription>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>

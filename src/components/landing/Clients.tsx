@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const clientLogos = [
-  { name: "H&M", src: "/placeholder-logo-hm.png" }, // Placeholder, replace with actual paths
-  { name: "Cencosud", src: "/placeholder-logo-cencosud.png" },
-  { name: "Acciona", src: "/placeholder-logo-acciona.png" },
-  { name: "Total Cleaning", src: "/placeholder-logo-total-cleaning.png" },
-  { name: "Total Back Office & Logistics", src: "/placeholder-logo-total-backoffice.png" },
-  { name: "DT&A", src: "/placeholder-logo-dta.png" },
+  { name: "H&M", src: "/images/clients/logo-hm.png" },
+  { name: "Cencosud", src: "/images/clients/logo-cencosud.png" },
+  { name: "Acciona", src: "/images/clients/logo-acciona.png" },
+  { name: "Total Cleaning", src: "/images/clients/logo-total-cleaning.png" },
+  { name: "Total Back Office & Logistics", src: "/images/clients/logo-total-backoffice.png" },
+  { name: "DT&A", src: "/images/clients/logo-dta.png" },
 ];
 
 const Clients = () => {
@@ -19,8 +19,11 @@ const Clients = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
           {clientLogos.map((client) => (
             <div key={client.name} className="p-4 flex justify-center items-center">
-              {/* Replace with actual img tags when logos are available */}
-              <span className="text-xl font-semibold text-gray-700">{client.name}</span>
+              <img 
+                src={client.src} 
+                alt={client.name} 
+                className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           ))}
         </div>

@@ -1,24 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Shield, Book, AlertTriangle } from "lucide-react";
 
 const trainings = [
   {
-    icon: <GraduationCap className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/training/os-10.jpg",
     title: "CURSOS OS-10",
     description: "Certificación oficial de Carabineros de Chile según Decreto 93, verificando cumplimiento de requerimientos prácticos y teóricos para guardias de seguridad.",
   },
   {
-    icon: <Shield className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/training/tactico.jpg",
     title: "USO DE ELEMENTOS TÁCTICOS",
     description: "Certificación especializada en uso de bastón retráctil y esposas para personal táctico, mejorando respuestas ante situaciones de peligro.",
   },
   {
-    icon: <Book className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/training/retail-procedimientos.jpg",
     title: "PROCEDIMIENTOS EN RETAIL",
     description: "Capacitación específica en normativas, procedimientos y protocolos de operación para desenvolverse correctamente en el sector retail.",
   },
   {
-    icon: <AlertTriangle className="h-10 w-10 text-primary" />,
+    imageUrl: "/images/training/delitos.jpg",
     title: "DELITOS Y HURTOS",
     description: "Formación legal sobre diferentes tipos de delitos, técnicas de detección y frustración, discriminando diferencias y agravantes de cada caso.",
   },
@@ -38,14 +37,16 @@ const Training = () => {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {trainings.map((training) => (
-            <Card key={training.title} className="flex flex-col items-center text-center p-6">
-              <CardHeader className="p-0 pb-4">
-                {training.icon}
-                <CardTitle className="mt-4 text-xl">{training.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-muted-foreground">{training.description}</p>
-              </CardContent>
+            <Card key={training.title} className="flex flex-col text-center">
+              <img src={training.imageUrl} alt={training.title} className="w-full h-40 object-cover rounded-t-lg" />
+              <div className="p-6 flex flex-col flex-grow">
+                <CardHeader className="p-0">
+                  <CardTitle className="text-xl">{training.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 mt-4 flex-grow">
+                  <p className="text-muted-foreground">{training.description}</p>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>

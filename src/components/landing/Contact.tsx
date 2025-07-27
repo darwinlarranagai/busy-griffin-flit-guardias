@@ -73,6 +73,11 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
+            <img 
+              src="/images/contact/oficina.jpg" 
+              alt="Oficina de Total Security" 
+              className="w-full h-64 object-cover rounded-lg mb-8 shadow-md"
+            />
             <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
             <div className="space-y-6">
               <div>
