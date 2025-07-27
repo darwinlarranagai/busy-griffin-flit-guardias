@@ -1,0 +1,46 @@
+import { Button } from "@/components/ui/button";
+
+const Hero = () => {
+  return (
+    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gray-900 text-white">
+      {/* TODO: Reemplazar con imagen de fondo real */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <div className="container relative z-10 mx-auto text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          LA SEGURIDAD COMIENZA CON NUESTRA PROTECCIÓN
+        </h1>
+        <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-300 md:text-xl">
+          Más de 22 años protegiendo empresas e instituciones con tecnología avanzada y personal altamente capacitado. Cobertura nacional e internacional con presencia en 4 países de Latinoamérica.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button size="lg" className="w-full sm:w-auto">
+            Solicitar Cotización Gratuita
+          </Button>
+          <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black">
+            Conocer Servicios
+          </Button>
+        </div>
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div className="p-4 bg-white/10 rounded-lg">
+            <p className="text-2xl font-bold">22+</p>
+            <p className="text-sm text-gray-300">Años de Experiencia</p>
+          </div>
+          <div className="p-4 bg-white/10 rounded-lg">
+            <p className="text-2xl font-bold">1500+</p>
+            <p className="text-sm text-gray-300">Agentes Desplegados</p>
+          </div>
+          <div className="p-4 bg-white/10 rounded-lg">
+            <p className="text-2xl font-bold">4+</p>
+            <p className="text-sm text-gray-300">Países con Presencia</p>
+          </div>
+          <div className="p-4 bg-white/10 rounded-lg">
+            <p className="text-2xl font-bold">OS-10</p>
+            <p className="text-sm text-gray-300">Acreditados</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
