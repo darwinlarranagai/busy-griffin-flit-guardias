@@ -30,15 +30,9 @@ const InternationalPresence = () => {
           </div>
         </div>
         {/* Placeholder for a more complex interactive map if needed later */}
-        <div className="mt-12 p-4 sm:p-8 bg-card rounded-lg shadow-md">
-          <h3 className="text-2xl font-bold mb-6 text-center">Nuestra Presencia en Latinoamérica</h3>
-          <img
-            src="/images/latam-map.png" // ¡IMPORTANTE! Reemplaza esta ruta con la de tu imagen de mapa.
-            alt="Mapa de Latinoamérica mostrando la presencia de Total Security"
-            className="w-full max-w-4xl mx-auto h-auto rounded-lg border border-border"
-          />
-          <p className="mt-6 text-center text-muted-foreground">
-            El mapa ilustra nuestra expansión y compromiso en la región, con puntos clave en Chile (Casa Matriz), Colombia, Ecuador y Perú.
+        <div className="mt-12 p-8 bg-gray-100 rounded-lg text-gray-600">
+          <p className="text-lg font-medium">
+            (Aquí se podría integrar un mapa interactivo de Latinoamérica mostrando la presencia de Total Security)
           </p>
         </div>
       </div>
