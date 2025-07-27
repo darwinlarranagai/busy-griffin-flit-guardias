@@ -1,5 +1,3 @@
-import InteractiveMap from './InteractiveMap';
-
 const InternationalPresence = () => {
   return (
     <section id="international" className="py-16 sm:py-24">
@@ -10,7 +8,7 @@ const InternationalPresence = () => {
         <p className="text-lg text-muted-foreground mb-8">
           Total Security tiene una sólida presencia en Latinoamérica, ofreciendo servicios de seguridad de primer nivel.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           <div className="p-6 border rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold text-primary mb-2">Chile</h3>
             <ul className="list-disc list-inside text-muted-foreground">
@@ -31,7 +29,12 @@ const InternationalPresence = () => {
             <p className="text-muted-foreground">Operaciones regionales</p>
           </div>
         </div>
-        <InteractiveMap />
+        {/* Placeholder for a more complex interactive map if needed later */}
+        <div className="mt-12 p-8 bg-gray-100 rounded-lg text-gray-600">
+          <p className="text-lg font-medium">
+            (Aquí se podría integrar un mapa interactivo de Latinoamérica mostrando la presencia de Total Security)
+          </p>
+        </div>
       </div>
     </section>
   );
