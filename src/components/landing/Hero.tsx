@@ -4,7 +4,14 @@ const Hero = () => {
   return (
     <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gray-900 text-white">
       {/* TODO: Reemplazar con imagen de fondo real */}
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/dark-security-background.jpg" // Reemplaza esta ruta con la de tu imagen
+          alt="Guardias de seguridad o textura de seguridad"
+          className="absolute inset-0 w-full h-full object-cover opacity-30" // La opacidad se puede ajustar
+        />
+        <div className="absolute inset-0 bg-black/60"></div> {/* Esta capa mantiene la oscuridad y legibilidad */}
+      </div>
       <div className="container relative z-10 mx-auto text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           LA SEGURIDAD COMIENZA CON NUESTRA PROTECCIÓN
