@@ -9,7 +9,7 @@ const Header = () => {
   const navLinks = [
     { name: "Inicio", href: "#" },
     { name: "Servicios", href: "#services" },
-    { name: "Nosotros", href: "#about" },
+    { name: "Nosotros", href: "#values" },
     { name: "Contacto", href: "#contact" },
   ];
 
@@ -38,9 +38,11 @@ const Header = () => {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
-          <Button className="hidden sm:inline-flex">
-            Solicitar Cotización
-          </Button>
+          <a href="#contact">
+            <Button className="hidden sm:inline-flex">
+              Solicitar Cotización
+            </Button>
+          </a>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
@@ -66,7 +68,9 @@ const Header = () => {
                     </a>
                   ))}
                 </nav>
-                <Button>Solicitar Cotización</Button>
+                <a href="#contact" onClick={() => setIsOpen(false)} className="w-full">
+                  <Button className="w-full">Solicitar Cotización</Button>
+                </a>
               </div>
             </SheetContent>
           </Sheet>

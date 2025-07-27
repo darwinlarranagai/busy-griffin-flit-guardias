@@ -13,6 +13,7 @@ import HiringProcess from "@/components/landing/HiringProcess";
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -33,6 +34,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <Toaster />
       <MadeWithDyad />
     </div>
   );

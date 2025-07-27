@@ -13,12 +13,16 @@ const Hero = () => {
           Más de 22 años protegiendo empresas e instituciones con tecnología avanzada y personal altamente capacitado. Cobertura nacional e internacional con presencia en 4 países de Latinoamérica.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="w-full sm:w-auto">
-            Solicitar Cotización Gratuita
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black">
-            Conocer Servicios
-          </Button>
+          <a href="#contact" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full">
+              Solicitar Cotización Gratuita
+            </Button>
+          </a>
+          <a href="#services" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="w-full border-white text-white hover:bg-white hover:text-black">
+              Conocer Servicios
+            </Button>
+          </a>
         </div>
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div className="p-4 bg-white/10 rounded-lg">
