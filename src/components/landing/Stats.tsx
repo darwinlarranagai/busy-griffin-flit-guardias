@@ -17,8 +17,8 @@ const Stats = () => {
             TOTAL SECURITY EN CIFRAS
           </h2>
         </div>
-        <div className="flex justify-center"> {/* Nuevo contenedor flex para centrar el grupo */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center"> {/* Cambiado a lg:grid-cols-5 */}
             {stats.map((stat) => (
               <Card key={stat.label} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
