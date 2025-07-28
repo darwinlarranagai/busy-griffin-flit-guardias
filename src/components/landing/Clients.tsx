@@ -4,9 +4,6 @@ const clientLogos = [
   { name: "H&M", src: "/images/clients/logo-hm.png" },
   { name: "Cencosud", src: "/images/clients/logo-cencosud.png" },
   { name: "Acciona", src: "/images/clients/logo-acciona.png" },
-  { name: "Total Cleaning", src: "/images/clients/logo-total-cleaning.png" },
-  { name: "Total Back Office & Logistics", src: "/images/clients/logo-total-backoffice.png" },
-  { name: "DT&A", src: "/images/clients/logo-dta.png" },
 ];
 
 const Clients = () => {
