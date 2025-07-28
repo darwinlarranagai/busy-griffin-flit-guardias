@@ -36,7 +36,7 @@ const CorporateValues = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value) => (
             <Card key={value.title} className="flex flex-col items-center text-center p-6">
-              <CardHeader className="p-0 pb-4">
+              <CardHeader className="p-0 pb-4 flex flex-col items-center"> {/* Added flex classes here */}
                 {value.icon}
                 <CardTitle className="mt-4 text-xl">{value.title}</CardTitle>
               </CardHeader>
