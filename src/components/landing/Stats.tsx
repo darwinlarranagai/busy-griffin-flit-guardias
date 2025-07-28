@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const stats = [
-  { value: "2000", label: "Año de fundación" },
   { value: "22+", label: "Años de experiencia nacional" },
   { value: "30+", label: "Años experiencia en Retail" },
   { value: "1500+", label: "Agentes desplegados en Chile" },
@@ -18,7 +17,7 @@ const Stats = () => {
             TOTAL SECURITY EN CIFRAS
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
           {stats.map((stat) => (
             <Card key={stat.label} className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
