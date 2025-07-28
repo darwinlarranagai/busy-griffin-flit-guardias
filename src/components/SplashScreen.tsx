@@ -6,33 +6,42 @@ interface SplashScreenProps {
 }
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onAnimationEnd }) => {
-  const [opacity, setOpacity] = useState(1); // Estado para controlar la opacidad
-  const transitionDuration = 500; // Duración de la transición de desvanecimiento en ms (0.5 segundos)
+  const [opacity, setOpacity] = useState(1);
+  // Initial background color: a shade of blue (Tailwind's blue-600)
+  const [bgColor, setBgColor] = useState('rgb(37, 99, 235)'); 
+
+  const totalDisplayTime = 2000; // Total time splash screen is visible (2 seconds)
+  const transitionDuration = 500; // Duration for both opacity and color transition (0.5 seconds)
 
   useEffect(() => {
-    // Temporizador para iniciar el desvanecimiento
-    const fadeOutTimer = setTimeout(() => {
-      setOpacity(0); // Inicia el desvanecimiento
-    }, 2000 - transitionDuration); // Empieza a desvanecerse 0.5s antes de los 2 segundos totales
+    // Timer to start the fade-out and color transition
+    const startTransitionTimer = setTimeout(() => {
+      setOpacity(0); // Start fading out
+      
+      // Dynamically get the --primary color from CSS variables
+      const rootStyles = getComputedStyle(document.documentElement);
+      const primaryColorHsl = rootStyles.getPropertyValue('--primary').trim();
+      setBgColor(`hsl(${primaryColorHsl})`); // Transition to corporate red
+    }, totalDisplayTime - transitionDuration); // Start transition 0.5s before total time
 
-    // Temporizador para desmontar el componente después de que el desvanecimiento haya terminado
+    // Timer to unmount the component after the total display time
     const unmountTimer = setTimeout(() => {
       onAnimationEnd();
-    }, 2000); // Duración total de la pantalla de carga (2 segundos)
+    }, totalDisplayTime);
 
     return () => {
-      clearTimeout(fadeOutTimer);
+      clearTimeout(startTransitionTimer);
       clearTimeout(unmountTimer);
     };
   }, [onAnimationEnd]);
 
   return (
     <div
-      className="fixed inset-0 bg-gray-900 flex flex-col items-center justify-center z-50 transition-opacity duration-500 ease-out"
-      style={{ opacity: opacity }}
+      className="fixed inset-0 flex flex-col items-center justify-center z-50 transition-all duration-500 ease-out"
+      style={{ opacity: opacity, backgroundColor: bgColor }}
     >
       <div className="flex flex-col items-center space-y-6">
-        <Shield className="w-24 h-24 text-white" /> {/* White shield icon */}
+        <Shield className="w-24 h-24 text-white" />
       </div>
     </div>
   );
