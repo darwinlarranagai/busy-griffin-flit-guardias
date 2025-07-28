@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const stats = [
   { value: "2.8%", label: "Aumento de robos con violencia en Chile (primer semestre 2024)" },
@@ -11,6 +12,12 @@ const stats = [
 ];
 
 const UrgencyContext = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleButtonClick = () => {
+    navigate('/contact'); // Navigate to the contact form route
+  };
+
   return (
     <section id="urgency" className="py-16 sm:py-24 bg-gray-900 text-white">
       <div className="container mx-auto text-center">
@@ -35,7 +42,11 @@ const UrgencyContext = () => {
         <p className="text-sm text-gray-400 mb-8">
           Fuente: Observatorio del Comercio Ilícito y Seguridad 2024
         </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-4">
+        <Button
+          size="lg"
+          className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-4"
+          onClick={handleButtonClick} // Add onClick handler
+        >
           No seas parte de estas estadísticas. Protege tu negocio HOY
         </Button>
       </div>
