@@ -25,7 +25,7 @@ const Hero = () => {
             </Button>
           </a>
           <a href="#services" className="w-full sm:w-auto">
-            <Button size="lg" variant="outline" className="w-full border-white text-white hover:bg-white hover:text-black text-base">
+            <Button size="lg" variant="outline" className="w-full border-white text-black hover:bg-white hover:text-gray-700 text-base">
               Conocer Servicios
             </Button>
           </a>
