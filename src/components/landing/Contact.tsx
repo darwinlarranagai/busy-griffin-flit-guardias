@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -21,8 +22,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 const formSchema = z.object({
   fullName: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
@@ -36,6 +38,7 @@ const formSchema = z.object({
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,13 +50,32 @@ const Contact = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "¡Formulario Enviado!",
-      description: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('contact-form', {
+        body: values,
+      });
+
+      if (error) {
+        throw new Error(`Detalle del error: ${error.message}`);
+      }
+
+      toast({
+        title: "¡Formulario Enviado!",
+        description: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema al enviar tu formulario. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -112,7 +134,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Nombre completo</FormLabel>
                       <FormControl>
-                        <Input placeholder="Tu nombre completo" {...field} />
+                        <Input placeholder="Tu nombre completo" {...field} disabled={isSubmitting} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -121,7 +143,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="tu@email.com" {...field} />
+                        <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -130,7 +152,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Teléfono</FormLabel>
                       <FormControl>
-                        <Input placeholder="+56 9 1234 5678" {...field} />
+                        <Input placeholder="+56 9 1234 5678" {...field} disabled={isSubmitting} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -139,7 +161,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Empresa (Opcional)</FormLabel>
                       <FormControl>
-                        <Input placeholder="Nombre de tu empresa" {...field} />
+                        <Input placeholder="Nombre de tu empresa" {...field} disabled={isSubmitting} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -147,7 +169,7 @@ const Contact = () => {
                   <FormField control={form.control} name="serviceType" render={({ field }) => (
                     <FormItem>
                       <FormLabel>Tipo de servicio requerido</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isSubmitting}>
                         <FormControl>
                           <SelectTrigger><SelectValue placeholder="Selecciona un servicio" /></SelectTrigger>
                         </FormControl>
@@ -167,7 +189,7 @@ const Contact = () => {
                   <FormField control={form.control} name="sector" render={({ field }) => (
                     <FormItem>
                       <FormLabel>Sector de la empresa</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isSubmitting}>
                         <FormControl>
                           <SelectTrigger><SelectValue placeholder="Selecciona un sector" /></SelectTrigger>
                         </FormControl>
@@ -185,13 +207,13 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Mensaje detallado sobre necesidades específicas</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Describe tus necesidades aquí..." rows={5} {...field} />
+                        <Textarea placeholder="Describe tus necesidades aquí..." rows={5} {...field} disabled={isSubmitting} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )} />
-                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white text-lg">
-                    Solicitar Cotización
+                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white text-lg" disabled={isSubmitting}>
+                    {isSubmitting ? 'Enviando...' : 'Solicitar Cotización'}
                   </Button>
                   <Button type="button" variant="outline" size="lg" className="w-full mt-4 border-primary text-primary hover:bg-primary/10" disabled>
                     Llamar Ahora para Emergencias
