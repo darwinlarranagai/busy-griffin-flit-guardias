@@ -30,7 +30,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onAnimationEnd }) => {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center z-50"
-      style={{ backgroundColor: 'hsl(var(--primary))' }} // Fondo rojo corporativo fijo
+      style={{ backgroundColor: 'hsl(var(--security-blue))' }} // Fondo azul oscuro de seguridad
     >
       <div
         className="flex flex-col items-center space-y-6 transition-opacity duration-500 ease-out"
