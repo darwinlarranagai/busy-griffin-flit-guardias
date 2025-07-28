@@ -6,7 +6,7 @@ const InternationalPresence = () => {
           PRESENCIA INTERNACIONAL
         </h2>
         <p className="text-lg text-muted-foreground mb-8">
-          Total Security tiene una sólida presencia en Latinoamérica, ofreciendo servicios de seguridad de primer nivel.
+          Total Security tiene una sólida presencia en Latinoamérica, ofreciendo servicios de seguridad de primer nivel en los siguientes países:
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           <div className="p-6 border rounded-lg shadow-sm">
@@ -28,13 +28,6 @@ const InternationalPresence = () => {
             <h3 className="text-xl font-semibold text-primary mb-2">Perú</h3>
             <p className="text-muted-foreground">Operaciones regionales</p>
           </div>
-        </div>
-        <div className="mt-12">
-          <img 
-            src="/images/international/mapa-latam.png" 
-            alt="Mapa de presencia internacional de Total Security en Latinoamérica" 
-            className="w-full max-w-4xl mx-auto object-contain rounded-lg shadow-md"
-          />
         </div>
       </div>
     </section>
