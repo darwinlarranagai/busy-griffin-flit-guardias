@@ -13,9 +13,14 @@ const Clients = () => {
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
           CLIENTES QUE CONFÍAN EN NOSOTROS
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
+        {/* Updated layout for client logos */}
+        <div className="flex flex-wrap justify-center gap-8"> {/* Changed from grid to flex for responsive centering */}
           {clientLogos.map((client) => (
-            <div key={client.name} className="p-4 flex justify-center items-center">
+            <div 
+              key={client.name} 
+              className="p-4 flex justify-center items-center 
+                         w-1/2 md:w-1/3 max-w-[180px]" // Responsive width for 2 per row on mobile, 3 on desktop
+            >
               <img 
                 src={client.src} 
                 alt={client.name} 
