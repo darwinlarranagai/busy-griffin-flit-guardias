@@ -191,7 +191,7 @@ const Contact = () => {
                     </FormItem>
                   )} />
                   <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white text-lg">
-                    Solicitar Cotización Gratuita en 24 Horas
+                    Solicitar Cotización
                   </Button>
                   <Button type="button" variant="outline" size="lg" className="w-full mt-4 border-primary text-primary hover:bg-primary/10" disabled>
                     Llamar Ahora para Emergencias
