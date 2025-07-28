@@ -29,12 +29,12 @@ const UrgencyContext = () => {
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {stats.map((stat) => (
-            <Card key={stat.label} className="bg-red-800 text-white border-red-700">
+            <Card key={stat.label} className="bg-primary text-white border-primary">
               <CardHeader>
                 <CardTitle className="text-4xl font-bold">{stat.value}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-red-100">{stat.label}</p>
+                <p className="text-white">{stat.label}</p>
               </CardContent>
             </Card>
           ))}
