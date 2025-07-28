@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import React from "react"; // Import React for React.Fragment
 
 const steps = [
   {
@@ -49,9 +50,9 @@ const HiringProcess = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
               <p className="text-muted-foreground">{s.description}</p>
-              {/* Vertical line for mobile */}
+              {/* Vertical line for mobile/tablet, adjusted to avoid text overlap */}
               {index < steps.length - 1 && (
-                <div className="md:hidden absolute bottom-[-2rem] w-0.5 h-16 bg-primary/20"></div>
+                <div className="md:hidden absolute top-[calc(100%+0rem)] left-[calc(50%-1rem)] w-0.5 h-8 bg-primary/20"></div>
               )}
             </div>
           ))}
