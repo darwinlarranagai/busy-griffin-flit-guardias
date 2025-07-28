@@ -10,12 +10,7 @@ export default {
   ],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      screens: {
-        "2xl": "1400px",
-      },
-    },
+    // Removed the 'container' object from here
     extend: {
       colors: {
         border: "hsl(var(--border))",

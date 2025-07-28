@@ -20,7 +20,7 @@ const UrgencyContext = () => {
 
   return (
     <section id="urgency" className="py-16 sm:py-24 bg-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
           LA REALIDAD QUE NO PODEMOS IGNORAR
         </h2>
@@ -42,13 +42,7 @@ const UrgencyContext = () => {
         <p className="text-sm text-gray-400 mb-8">
           Fuente: Observatorio del Comercio Ilícito y Seguridad 2024
         </p>
-        <Button
-          size="lg"
-          className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-4"
-          onClick={handleButtonClick} // Add onClick handler
-        >
-          No seas parte de estas estadísticas. Protege tu negocio HOY
-        </Button>
+        {/* Removed the button and text 'No seas parte de estas estadísticas. Protege tu negocio HOY' */}
       </div>
     </section>
   );

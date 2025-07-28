@@ -9,7 +9,7 @@ const clientLogos = [
 const Clients = () => {
   return (
     <section id="clients" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
           CLIENTES QUE CONFÍAN EN NOSOTROS
         </h2>
