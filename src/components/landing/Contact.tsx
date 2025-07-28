@@ -71,7 +71,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Information */}
           <div>
-            <div className="max-w-lg mx-auto">
+            <div className="max-w-md mx-auto px-4"> {/* Adjusted max-w and added px-4 */}
               <img 
                 src="/images/contact/oficina.jpg" 
                 alt="Oficina de Total Security" 
@@ -104,7 +104,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <div className="w-full max-w-lg mx-auto">
+            <div className="w-full max-w-md mx-auto px-4"> {/* Adjusted max-w and added px-4 */}
               <h3 className="text-2xl font-bold mb-6">Solicita tu Cotización Gratuita</h3>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
