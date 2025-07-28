@@ -26,20 +26,20 @@ const Services = () => {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Nuestros Servicios de Seguridad a la Medida
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             Desarrollamos servicios estandarizados de seguridad que pueden ser personalizados a la medida de tu negocio.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col">
-              <img src={service.imageUrl} alt={service.title} className="w-full h-48 object-cover rounded-t-lg" />
+            <Card key={service.title} className="flex flex-col overflow-hidden">
+              <img src={service.imageUrl} alt={service.title} className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
                 <CardHeader className="p-0">
-                  <CardTitle>{service.title}</CardTitle>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 mt-4 flex-grow">
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
               </div>
             </Card>

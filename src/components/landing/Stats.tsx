@@ -17,21 +17,19 @@ const Stats = () => {
             TOTAL SECURITY EN CIFRAS
           </h2>
         </div>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
-            {stats.map((stat) => (
-              <Card key={stat.label} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-3xl sm:text-4xl font-bold text-primary">
-                    {stat.value}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+          {stats.map((stat) => (
+            <Card key={stat.label} className="text-center hover:shadow-lg transition-shadow p-4">
+              <CardHeader className="p-0">
+                <CardTitle className="text-4xl sm:text-5xl font-bold text-primary">
+                  {stat.value}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0 mt-2">
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const stats = [
   { value: "2.8%", label: "Aumento de robos con violencia en Chile (primer semestre 2024)" },
@@ -12,10 +11,10 @@ const stats = [
 ];
 
 const UrgencyContext = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/contact'); // Navigate to the contact form route
+    navigate('/contact');
   };
 
   return (
@@ -24,25 +23,24 @@ const UrgencyContext = () => {
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
           LA REALIDAD QUE NO PODEMOS IGNORAR
         </h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-300 mb-12">
+        <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-gray-300 mb-12">
           Cifras oficiales del primer semestre 2024 que demuestran la urgente necesidad de seguridad profesional.
         </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {stats.map((stat) => (
-            <Card key={stat.label} className="bg-primary text-white border-primary">
-              <CardHeader>
-                <CardTitle className="text-3xl sm:text-4xl font-bold">{stat.value}</CardTitle>
+            <Card key={stat.label} className="bg-primary text-white border-primary p-4">
+              <CardHeader className="p-0">
+                <CardTitle className="text-4xl sm:text-5xl font-bold">{stat.value}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-white">{stat.label}</p>
+              <CardContent className="p-0 mt-2">
+                <p className="text-sm text-white/90">{stat.label}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <p className="text-sm text-gray-400 mb-8">
+        <p className="text-xs sm:text-sm text-gray-400 mb-8">
           Fuente: Observatorio del Comercio Ilícito y Seguridad 2024
         </p>
-        {/* Removed the button and text 'No seas parte de estas estadísticas. Protege tu negocio HOY' */}
       </div>
     </section>
   );
