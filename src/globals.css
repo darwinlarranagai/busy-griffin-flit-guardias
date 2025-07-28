@@ -46,7 +46,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --security-blue: 220 30% 15%; /* Azul marino oscuro para seguridad */
+    --security-blue: 224 33.4% 6.5%; /* Azul oscuro de seguridad: #0B0E16 */
   }
 
   .dark {
@@ -87,7 +87,7 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --security-blue: 220 30% 15%; /* Azul marino oscuro para seguridad */
+    --security-blue: 224 33.4% 6.5%; /* Azul oscuro de seguridad: #0B0E16 */
   }
 }
 
