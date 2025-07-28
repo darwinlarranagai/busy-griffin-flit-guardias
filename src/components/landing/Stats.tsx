@@ -18,11 +18,11 @@ const Stats = () => {
           </h2>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center"> {/* Cambiado a lg:grid-cols-5 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
             {stats.map((stat) => (
               <Card key={stat.label} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle className="text-4xl font-bold text-primary">
+                  <CardTitle className="text-3xl sm:text-4xl font-bold text-primary">
                     {stat.value}
                   </CardTitle>
                 </CardHeader>

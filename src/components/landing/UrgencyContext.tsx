@@ -31,7 +31,7 @@ const UrgencyContext = () => {
           {stats.map((stat) => (
             <Card key={stat.label} className="bg-primary text-white border-primary">
               <CardHeader>
-                <CardTitle className="text-4xl font-bold">{stat.value}</CardTitle>
+                <CardTitle className="text-3xl sm:text-4xl font-bold">{stat.value}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-white">{stat.label}</p>
