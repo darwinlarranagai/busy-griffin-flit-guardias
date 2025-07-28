@@ -13,13 +13,12 @@ const Clients = () => {
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
           CLIENTES QUE CONFÍAN EN NOSOTROS
         </h2>
-        {/* Updated layout for client logos */}
-        <div className="flex flex-wrap justify-center gap-8"> {/* Changed from grid to flex for responsive centering */}
+        {/* Usando márgenes negativos y padding para un espaciado adaptable */}
+        <div className="flex flex-wrap justify-center -m-4">
           {clientLogos.map((client) => (
             <div 
               key={client.name} 
-              className="p-4 flex justify-center items-center 
-                         w-1/2 md:w-1/3 max-w-[180px]" // Responsive width for 2 per row on mobile, 3 on desktop
+              className="w-1/2 md:w-1/3 p-4 flex justify-center items-center"
             >
               <img 
                 src={client.src} 
@@ -29,7 +28,7 @@ const Clients = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex justify-center"> {/* Simplified to center a single item */}
+        <div className="mt-12 flex justify-center">
           <Card className="p-4 text-center">
             <CardContent className="p-0 text-lg font-medium text-primary">
               Renovación de contratos 95%
