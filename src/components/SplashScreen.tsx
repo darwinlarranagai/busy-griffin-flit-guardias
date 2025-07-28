@@ -6,42 +6,37 @@ interface SplashScreenProps {
 }
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onAnimationEnd }) => {
-  const [opacity, setOpacity] = useState(1);
-  // Initial background color: a shade of blue (Tailwind's blue-600)
-  const [bgColor, setBgColor] = useState('rgb(37, 99, 235)'); 
-
-  const totalDisplayTime = 2000; // Total time splash screen is visible (2 seconds)
-  const transitionDuration = 500; // Duration for both opacity and color transition (0.5 seconds)
+  const [iconOpacity, setIconOpacity] = useState(1); // Estado para controlar la opacidad del icono
+  const totalDisplayTime = 2000; // Duración total de la pantalla de carga (2 segundos)
+  const iconFadeOutDuration = 500; // Duración del desvanecimiento del icono (0.5 segundos)
 
   useEffect(() => {
-    // Timer to start the fade-out and color transition
-    const startTransitionTimer = setTimeout(() => {
-      setOpacity(0); // Start fading out
-      
-      // Dynamically get the --primary color from CSS variables
-      const rootStyles = getComputedStyle(document.documentElement);
-      const primaryColorHsl = rootStyles.getPropertyValue('--primary').trim();
-      setBgColor(`hsl(${primaryColorHsl})`); // Transition to corporate red
-    }, totalDisplayTime - transitionDuration); // Start transition 0.5s before total time
+    // Temporizador para iniciar el desvanecimiento del icono
+    const startIconFadeOutTimer = setTimeout(() => {
+      setIconOpacity(0); // Inicia el desvanecimiento del icono
+    }, totalDisplayTime - iconFadeOutDuration); // Empieza a desvanecerse 0.5s antes de los 2 segundos totales
 
-    // Timer to unmount the component after the total display time
+    // Temporizador para desmontar el componente después de la duración total
     const unmountTimer = setTimeout(() => {
       onAnimationEnd();
     }, totalDisplayTime);
 
     return () => {
-      clearTimeout(startTransitionTimer);
+      clearTimeout(startIconFadeOutTimer);
       clearTimeout(unmountTimer);
     };
   }, [onAnimationEnd]);
 
   return (
     <div
-      className="fixed inset-0 flex flex-col items-center justify-center z-50 transition-all duration-500 ease-out"
-      style={{ opacity: opacity, backgroundColor: bgColor }}
+      className="fixed inset-0 flex flex-col items-center justify-center z-50"
+      style={{ backgroundColor: 'hsl(var(--primary))' }} // Fondo rojo corporativo fijo
     >
-      <div className="flex flex-col items-center space-y-6">
-        <Shield className="w-24 h-24 text-white" />
+      <div
+        className="flex flex-col items-center space-y-6 transition-opacity duration-500 ease-out"
+        style={{ opacity: iconOpacity }} // Aplica la opacidad al contenedor del icono
+      >
+        <Shield className="w-24 h-24 text-white" /> {/* Icono de escudo blanco */}
       </div>
     </div>
   );
