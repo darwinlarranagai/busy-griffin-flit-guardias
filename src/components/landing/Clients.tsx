@@ -29,12 +29,7 @@ const Clients = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <Card className="p-4 text-center">
-            <CardContent className="p-0 text-lg font-medium text-primary">
-              Clientes satisfechos desde 2000
-            </CardContent>
-          </Card>
+        <div className="mt-12 flex justify-center"> {/* Simplified to center a single item */}
           <Card className="p-4 text-center">
             <CardContent className="p-0 text-lg font-medium text-primary">
               Renovación de contratos 95%
