@@ -12,7 +12,7 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-black/60"></div> {/* Esta capa mantiene la oscuridad y legibilidad */}
       </div>
-      <div className="container relative z-10 mx-auto text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           LA SEGURIDAD COMIENZA CON NUESTRA PROTECCIÓN
         </h1>
