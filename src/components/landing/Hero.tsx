@@ -16,7 +16,7 @@ const Hero = () => {
           LA SEGURIDAD COMIENZA CON NUESTRA PROTECCIÓN
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-300">
-          Más de 22 años protegiendo empresas e instituciones con tecnología avanzada y personal altamente capacitado. Cobertura nacional e internacional con presencia en 4 países de Latinoamérica.
+          Más de 22 años protegiendo empresas e instituciones con tecnología avanzada y personal altamente capacitado.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#contact" className="w-full sm:w-auto">
