@@ -39,20 +39,20 @@ const HiringProcess = () => {
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground mb-12">
           Proceso simple en 5 pasos.
         </p>
-        <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-4">
+        <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start md:space-x-4">
           {/* Line for desktop */}
           <div className="hidden md:block absolute top-6 left-0 right-0 h-1 bg-primary/20 mx-12"></div>
           
           {steps.map((s, index) => (
-            <div key={s.step} className="relative flex flex-col items-center text-center md:w-1/5">
+            <div key={s.step} className="relative flex flex-col items-center text-center md:w-1/5 w-full max-w-xs mx-auto pb-12 md:pb-0">
               <div className="relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white font-bold text-xl mb-4">
                 {s.step}
               </div>
               <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
               <p className="text-muted-foreground">{s.description}</p>
-              {/* Vertical line for mobile/tablet, adjusted to avoid text overlap and be centered */}
+              {/* Vertical line for mobile/tablet */}
               {index < steps.length - 1 && (
-                <div className="md:hidden absolute top-[calc(100%+0rem)] left-[calc(50%-1px)] w-0.5 h-8 bg-primary/20"></div>
+                <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-12 bg-primary/20" />
               )}
             </div>
           ))}
