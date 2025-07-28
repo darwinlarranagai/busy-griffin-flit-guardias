@@ -192,11 +192,9 @@ const Contact = () => {
                 <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white text-lg">
                   Solicitar Cotización Gratuita en 24 Horas
                 </Button>
-                <a href="tel:+56944770441">
-                  <Button type="button" variant="outline" size="lg" className="w-full mt-4 border-primary text-primary hover:bg-primary/10">
-                    Llamar Ahora para Emergencias
-                  </Button>
-                </a>
+                <Button type="button" variant="outline" size="lg" className="w-full mt-4 border-primary text-primary hover:bg-primary/10" disabled>
+                  Llamar Ahora para Emergencias
+                </Button>
               </form>
             </Form>
           </div>
