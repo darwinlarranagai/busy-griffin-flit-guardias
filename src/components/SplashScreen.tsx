@@ -7,14 +7,14 @@ interface SplashScreenProps {
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onAnimationEnd }) => {
   const [iconOpacity, setIconOpacity] = useState(1); // Estado para controlar la opacidad del icono
-  const totalDisplayTime = 2000; // Duración total de la pantalla de carga (2 segundos)
+  const totalDisplayTime = 3000; // Duración total de la pantalla de carga (3 segundos)
   const iconFadeOutDuration = 500; // Duración del desvanecimiento del icono (0.5 segundos)
 
   useEffect(() => {
     // Temporizador para iniciar el desvanecimiento del icono
     const startIconFadeOutTimer = setTimeout(() => {
       setIconOpacity(0); // Inicia el desvanecimiento del icono
-    }, totalDisplayTime - iconFadeOutDuration); // Empieza a desvanecerse 0.5s antes de los 2 segundos totales
+    }, totalDisplayTime - iconFadeOutDuration); // Empieza a desvanecerse 0.5s antes de los 3 segundos totales
 
     // Temporizador para desmontar el componente después de la duración total
     const unmountTimer = setTimeout(() => {
