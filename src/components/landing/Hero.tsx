@@ -31,24 +31,6 @@ const Hero = () => {
             </Button>
           </a>
         </div>
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-          <div className="p-4 bg-white/10 rounded-lg">
-            <p className="text-2xl font-bold">22+</p>
-            <p className="text-sm text-gray-300">Años de Experiencia</p>
-          </div>
-          <div className="p-4 bg-white/10 rounded-lg">
-            <p className="text-2xl font-bold">1500+</p>
-            <p className="text-sm text-gray-300">Agentes Desplegados</p>
-          </div>
-          <div className="p-4 bg-white/10 rounded-lg">
-            <p className="text-2xl font-bold">4+</p>
-            <p className="text-sm text-gray-300">Países con Presencia</p>
-          </div>
-          <div className="p-4 bg-white/10 rounded-lg">
-            <p className="text-2xl font-bold">OS-10</p>
-            <p className="text-sm text-gray-300">Acreditados</p>
-          </div>
-        </div>
       </div>
     </section>
   );
